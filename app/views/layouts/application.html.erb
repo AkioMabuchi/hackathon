@@ -1,15 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
-    <title>Hackathon</title>
+    <title>Akio Hackathon</title>
+    <%= display_meta_tags(default_meta_tags) %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
   </head>
 
   <body>
+  <header>
+    <% if @current_user %>
+      <%= react_component("Header", {mode: "user", permalink: @current_user.permalink, name: @current_user.name, image: @current_user.image.url}) %>
+    <% else %>
+      <%= react_component("Header", {mode: "guest"}) %>
+    <% end %>
+  </header>
     <%= yield %>
+  <footer>
+
+  </footer>
   </body>
 </html>

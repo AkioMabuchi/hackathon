@@ -1,0 +1,60 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// -------------------------------------------------- LOGIN FORM --------------------------------------------------
+
+form.login-form{
+  padding: 20px 20px 30px;
+  border: 1px solid #BFBFBF;
+
+  @media(max-width: 420px){
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  @media(min-width: 420px) {
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  h2{
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+
+  p{
+    padding-top: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  button.twitter{
+    display: block;
+    width: 260px;
+    height: 50px;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #1DA1F2;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+}
+
+div.twitter-callback{
+  padding-top: 50px;
+  font-size: 16px;
+  color: #BFBFBF;
+  text-align: center;
+}
+
+form.twitter-callback{
+  display: none;
+}

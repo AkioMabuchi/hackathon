@@ -1,0 +1,454 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+*{
+  font-family: "Hiragino Kaku Gothic Pro",
+  "Hiragino Kaku Gothic ProN", serif;
+  box-sizing: border-box;
+  &.focus{
+    outline: none;
+  }
+}
+
+body{
+  padding: 60px 0 80px;
+  min-height: 1200px;
+}
+
+a{
+  text-decoration: none;
+  color: #4A90E2;
+  &:hover{
+    color: #4A90E2;
+  }
+}
+
+button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
+h1{
+  margin: 0;
+  padding: 30px 0;
+  font-size: 32px;
+  font-weight: 200;
+  color: #AACC00;
+  line-height: 40px;
+  text-align: center;
+}
+
+h2{
+  padding: 0;
+  margin: 0;
+}
+
+h3{
+  padding: 0;
+  margin: 0;
+}
+
+h4{
+  padding: 0;
+  margin: 0;
+}
+
+h5{
+  padding: 0;
+  margin: 0;
+}
+
+h6{
+  padding: 0;
+  margin: 0;
+}
+
+p{
+  padding: 0;
+  margin: 0;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+}
+
+li{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// -------------------------------------------------- HEADER --------------------------------------------------
+
+$header-breakpoint: 980px;
+
+header{
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  background: -webkit-linear-gradient(left, #99E500, #E5E500);
+  background: linear-gradient(left, #99E500, #E5E500);
+
+  a.logo-mobile{
+    @media(min-width: 600px){
+      display: none;
+    }
+    @media(max-width: 600px) {
+      display: block;
+      width: 40px;
+      height: 50px;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      background-image: image-url("HeaderLogoMobile.png");
+      background-size: cover;
+      &:hover{
+        background-image: image_url("HeaderLogoMobileHover.png");
+      }
+    }
+  }
+
+  a.logo-desktop{
+    @media(max-width: 600px){
+      display: none;
+    }
+    @media(min-width: 600px) {
+      display: block;
+      width: 360px;
+      height: 50px;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      background-image: image-url("HeaderLogoDesktop.png");
+      background-size: cover;
+      &:hover{
+        background-image: image_url("HeaderLogoDesktopHover.png");
+      }
+    }
+  }
+
+  ul.menu{
+    @media(max-width: $header-breakpoint){
+      display: none;
+    }
+    @media(min-width: $header-breakpoint){
+      display: flex;
+      position: absolute;
+      top: 20px;
+      left: 380px;
+    }
+
+    height: 20px;
+    li{
+      padding-right: 20px;
+      line-height: 20px;
+      a{
+        font-weight: 600;
+        font-size: 16px;
+
+        color: white;
+        &:hover{
+          color: #EAFF80;
+        }
+      }
+    }
+  }
+
+  a.login-button{
+    @media(max-width: $header-breakpoint){
+      display: none;
+    }
+    @media(min-width: $header-breakpoint){
+      display: block;
+      width: 120px;
+      height: 40px;
+      line-height: 20px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      color: white;
+      border: 3px solid white;
+      border-radius: 10px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      &:hover{
+        color: #EAFF80;
+        border-color: #EAFF80;
+      }
+    }
+  }
+
+  a.attend-button{
+    @media(max-width: $header-breakpoint) {
+      display: none;
+    }
+    @media(min-width: $header-breakpoint){
+      display: block;
+      width: 160px;
+      height: 40px;
+      border-radius: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      position: absolute;
+      background-color: #FF0060;
+      top: 10px;
+      right: 230px;
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      text-align: center;
+      line-height: 20px;
+    }
+  }
+
+  a.publish-button{
+    @media(max-width: $header-breakpoint){
+      display: none;
+    }
+    @media(min-width: $header-breakpoint){
+      display: block;
+      width: 150px;
+      height: 40px;
+      border-radius: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: #F5A623;
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      text-align: center;
+      line-height: 20px;
+      position: absolute;
+      top: 10px;
+      right: 70px;
+    }
+  }
+  button.user-button{
+    @media(max-width: $header-breakpoint){
+      display: none;
+    }
+    @media(min-width: $header-breakpoint) {
+      display: block;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      img{
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+      }
+    }
+  }
+
+  button.hamburger-button{
+    @media(min-width: $header-breakpoint) {
+      display: none;
+    }
+    @media(max-width: $header-breakpoint) {
+      display: block;
+      width: 50px;
+      height: 40px;
+      background-size: cover;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+
+      &.open{
+        background-image: image_url("HeaderButtonClose.png");
+        &:hover{
+          background-image: image_url("HeaderButtonCloseHover.png");
+        }
+      }
+
+      &.close{
+        background-image: image_url("HeaderButtonOpen.png");
+        &:hover{
+          background-image: image_url("HeaderButtonOpenHover.png");
+        }
+      }
+    }
+  }
+
+  div.pull-down-menu{
+    display: block;
+    overflow-y: hidden;
+    transition: height 0.5s;
+    position: absolute;
+    background-color: #6A8000;
+    top: 60px;
+    right: 0;
+    left: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    ul.common{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      li{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #404D00;
+        a{
+          line-height: 20px;
+          font-weight: 400;
+          font-size: 16px;
+          color: white;
+        }
+        &:nth-child(1){
+          border-top: 1px solid #404D00;
+        }
+      }
+    }
+
+    div.login{
+      padding: 10px;
+      background-color: #7F9900;
+      a{
+        line-height: 20px;
+        font-size: 16px;
+        color: white;
+      }
+    }
+
+    div.user{
+      padding: 10px;
+      background-color: #7F9900;
+      div.image-name{
+        height: 40px;
+        position: relative;
+        img{
+          display: block;
+          width: 40px;
+          height: 40px;
+          border-radius: 20px;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        p{
+          width: calc(100% - 50px);
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 30px;
+          position: absolute;
+          top: 5px;
+          left: 50px;
+          color: white;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      ul{
+        padding-top: 10px;
+        li{
+          border-bottom: 1px solid #6A8000;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          a, button{
+            line-height: 20px;
+            font-size: 16px;
+            color: white;
+          }
+          &:nth-child(1){
+            border-top: 1px solid #6A8000;
+          }
+        }
+      }
+    }
+
+    &.close{
+      height: 0;
+    }
+
+    &.open-guest{
+      height: 170px;
+    }
+
+    &.open-user{
+      height: 465px;
+    }
+  }
+  div.popup-menu{
+    display: block;
+    width: 320px;
+    position: fixed;
+    top: 57px;
+    right: 7px;
+    padding: 10px;
+    border: 1px solid #979797;
+    background-color: white;
+    z-index: 100;
+
+    div.image-name{
+      position: relative;
+      height: 40px;
+      img{
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      p{
+        width: 250px;
+        height: 30px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        position: absolute;
+        top: 5px;
+        left: 50px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    ul{
+      padding-top: 10px;
+      li{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #D8D8D8;
+        a, button{
+          height: 20px;
+          line-height: 20px;
+          font-size: 16px;
+          color: #BFBFBF;
+          &:hover{
+            color: black;
+          }
+        }
+
+        &:nth-child(1){
+          border-top: 1px solid #D8D8D8;
+        }
+      }
+    }
+  }
+}
+
+// -------------------------------------------------- FOOTER --------------------------------------------------
+
+footer{
+
+}
+
